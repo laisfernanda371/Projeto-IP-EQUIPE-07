@@ -1,8 +1,7 @@
 import pygame
-
 from interface.scream import tela
-pygame.init()
 
+pygame.init()
 
 class Casaveis(pygame.sprite.Sprite):
     def __init__(self, nome, sprite,posicao):
