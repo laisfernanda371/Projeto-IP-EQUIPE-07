@@ -1,5 +1,5 @@
 import pygame
-from ..constante import largura,altura,fps
+from constante import largura,altura,fps
 
 pygame.init()
 

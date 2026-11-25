@@ -12,12 +12,12 @@ from random import randint
 class Camera(pygame.sprite.Group):
     def __init__(self):
         super().__init__()
-        self.display_surface = pygame.display.get_surface()
+        self.superficie_tela = pygame.display.get_surface()
 
         #calcula o deslocamento da câmera
         self.deslocamento = pygame.math.Vector2()
-        self.half_w = self.display_surface.get_size()[0] // 2
-        self.half_h = self.display_surface.get_size()[1] // 2
+        self.half_w = self.superficie_tela.get_size()[0] // 2
+        self.half_h = self.superficie_tela.get_size()[1] // 2
 
         self.fundo_imagem = pygame.image.load('graphics/ground.png').convert_alpha()
         self.ground_rect = self.fundo_imagem.get_rect(topleft = (0,0))
@@ -47,10 +47,10 @@ class Camera(pygame.sprite.Group):
         self.center_target_camera(player)
 
         fundo_posicao = self.ground_rect.topleft - self.deslocamento
-        self.display_surface.blit(self.fundo_imagem,fundo_posicao)
+        self.superficie_tela.blit(self.fundo_imagem,fundo_posicao)
 
         for sprite in sorted(self.sprites(),key=lambda sprite:sprite.rect.centery):
             posicao_tela = sprite.rect.topleft - self.deslocamento
-            self.display_surface.blit(sprite.image,posicao_tela)
+            self.superficie_tela.blit(sprite.image,posicao_tela)
 
 
