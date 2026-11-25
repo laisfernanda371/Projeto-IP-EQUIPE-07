@@ -41,19 +41,19 @@ class Player(pygame.sprite.Sprite):
         teclas = pygame.key.get_pressed()
         novo_estado = "parado"
 
-        if teclas[pygame.K_d]:
-            self.rect.x += self.velocidade
-            novo_estado = "direita"
-        elif teclas[pygame.K_a]:
-            self.rect.x -= self.velocidade
-            novo_estado = "esquerda"
-
         if teclas[pygame.K_s]:
             self.rect.y += self.velocidade
             novo_estado = "baixo"
         elif teclas[pygame.K_w]:
             self.rect.y -= self.velocidade
             novo_estado = "baixo"
+
+        if teclas[pygame.K_d]:
+            self.rect.x += self.velocidade
+            novo_estado = "direita"
+        elif teclas[pygame.K_a]:
+            self.rect.x -= self.velocidade
+            novo_estado = "esquerda"
 
         if novo_estado != self.estado:  #verifica se mudou de direção e reinicia a animação
             self.estado = novo_estado

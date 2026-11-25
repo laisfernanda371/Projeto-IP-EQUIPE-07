@@ -3,11 +3,10 @@ import pygame
 class DynamicSolid:  # NOTA: por enquanto só funciona colisões dinamico -> estatico, e não dinamico -> dinamico
                      # (a não ser que você trate um dos sólidos como estatico)
 
-    hitbox = pygame.Rect(0,0,0,0)
-    velocity = pygame.Vector2(0,0)
 
     def __init__(self, left: int, top: int, width: int, height: int):
         self.hitbox = pygame.Rect(left, top, width, height)
+        self.velocity = pygame.Vector2(0, 0)
 
     def force_move(self, x: int, y: int):
         self.hitbox = self.hitbox.move(x, y)
