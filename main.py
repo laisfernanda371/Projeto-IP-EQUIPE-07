@@ -23,4 +23,4 @@ while True:
     todas_sprites.custom_draw(player)
 
     pygame.display.update()
-    tempo.tick(fps)
+    tempo.tick(FPS)
