@@ -1,7 +1,7 @@
 import pygame
 
 
-largura=1280
-altura=720
-fps=60
-tilesize=36
+LARGURA = 1280
+ALTURA = 720
+FPS = 60
+TILESIZE = 36
