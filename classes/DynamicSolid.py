@@ -40,3 +40,7 @@ class DynamicSolid:  # NOTA: por enquanto só funciona colisões dinamico -> est
             self.hitbox = self.hitbox.move(0, back_y)
         else:
             self.hitbox = self.hitbox.move(back_x, back_y) # caso de colisão de canto
+
+    def unclip_list(self, rect_list : list):  # aplica unclip a uma série de objetos sólidos
+        while self.hitbox.collidelist(rect_list) != -1:
+            self.unclip(rect_list[self.hitbox.collidelist(rect_list)])
